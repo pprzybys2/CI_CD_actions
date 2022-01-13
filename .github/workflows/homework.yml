@@ -23,7 +23,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file utils/pom.xml
+      run: mvn clean package --file utils/pom.xml
     - name: Upload Maven build artifact
       uses: actions/upload-artifact@v2
       with:
@@ -46,7 +46,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file services/pom.xml
+      run: mvn clean package --file services/pom.xml
       
   buildAdmin:
     needs: [buildUtils, buildServices]
@@ -61,5 +61,5 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file admin/pom.xml
+      run: mvn clean package --file admin/pom.xml
   
