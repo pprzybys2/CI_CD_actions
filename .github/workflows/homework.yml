@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: BuildersUtil-1.0-SNAPSHOT.jar
-        path: /artifacts
+        path: /artifacts/BuildersUtil-1.0-SNAPSHOT.jar
       
   buildServices:
     needs: buildUtils
