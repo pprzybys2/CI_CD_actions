@@ -24,6 +24,11 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file utils/pom.xml
+    - name: Upload Maven build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifact.jar
+        path: ./BuildersUtil-1.0-SNAPSHOT.jar
       
   buildServices:
     needs: buildUtils
