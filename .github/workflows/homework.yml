@@ -25,7 +25,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file utils/pom.xml
       
-  buildService:
+  buildServices:
     needs: buildUtils
     runs-on: ubuntu-latest
 
@@ -38,10 +38,10 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file service/pom.xml
+      run: mvn -B package --file services/pom.xml
       
   buildAdmin:
-    needs: [buildUtils, buildService]
+    needs: [buildUtils, buildServices]
     runs-on: ubuntu-latest
 
     steps:
